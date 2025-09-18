@@ -1,0 +1,34 @@
+
+<<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Vocab</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input[type="number"] { padding: 8px; margin: 10px 0; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        h2 { color: #333; }
+        .result { font-size: 1.2em; color: #555; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Start game</h1>
+        <p>Enter the member's number</p>
+
+        <form action="/draw" method="post">
+            <label for="num_players">member(at least 5): </label>
+            <input type="number" id="num_players" name="num_players" min="5" required>
+            <button type="submit">Press!</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h3>Result:</h3>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
